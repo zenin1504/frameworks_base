@@ -54,7 +54,9 @@ class InternetTileExtrasViewModel @Inject constructor(
     val fiveGAvailable: StateFlow<Boolean> = _fiveGAvailable.asStateFlow()
 
     val mobileDataUsage: StateFlow<String?> = dataUsageRepository.mobileUsageFormatted
+    val mobileCarrier: StateFlow<String?> = dataUsageRepository.mobileCarrier
     val wifiDataUsage: StateFlow<String?> = dataUsageRepository.wifiUsageFormatted
+    val wifiSsid: StateFlow<String?> = dataUsageRepository.wifiSsid
 
     private val hotspotCallback = object : HotspotController.Callback {
         override fun onHotspotChanged(enabled: Boolean, numDevices: Int) {
